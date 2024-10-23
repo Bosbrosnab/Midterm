@@ -1,46 +1,52 @@
 #Midterm Exam
 #Problem1.py
-#Name:
-#Date:
+#Name: Alex Bowes
+#Date: 10/23/24
 
 def listSum(myList):
-  """Returns the sum (addition) total of the numbers in the list"""
-
-  return 0
+    total = 0
+    for number in myList:
+        total += number
+    return total
 
 def listMax(myList):
-  """Returns the value of the largest element of a list"""
-
-  return 0
+    for number in myList:
+        max_value = number
+    return number
 
 def listMin(myList):
-  """Returns the value of the smallest element of a list"""
-
-  return 0
+    min_value = myList[0]
+    for number in myList:
+        if number < min_value:
+            min_value = number
+    return min_value
 
 def listAverage(myList):
-  """Returns the average value of the numbers in the list"""
-
-  return 0
+    total = listSum(myList)
+    return total / len(myList)
 
 def listAverageDropLowest(myList):
-  """Returns the average of a list but excludes the smallest value if __name__ == '__main__':
-      the list in the calculation"""
+    min_value = listMin(myList)
+    total = 0
+    count = 0
+    for number in myList:
+        if number != min_value:
+            total += number
+            count += 1
+    return total / count
 
-  return 0
 
-#Test your new functions in this main
 def main():
-  testList = [1, 2, 3, 4]
-  total = listSum(testList)
-  ave = listAverage(testList)
+    testList = [1, 2, 3, 4]
+    total = listSum(testList)
+    ave = listAverage(testList)
 
-  print("The total of the list is %d and the average is %.2f" %(total, ave))
+    print("The total of the list is %d and the average is %.2f" % (total, ave))
 
-  totalDropLow = listAverageDropLowest(testList)
+    totalDropLow = listAverageDropLowest(testList)
 
-  print("The average is %.2f if we drop the lowest value." %(totalDropLow))
+    print("The average is %.2f if we drop the lowest value." % (totalDropLow))
 
 
 if __name__ == '__main__':
-  main()
+    main()
